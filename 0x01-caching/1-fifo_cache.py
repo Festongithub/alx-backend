@@ -19,10 +19,10 @@ class FIFOCache(BaseCaching):
             pass
         else:
             if key not in self.cache_data \
-            and len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-                first_key = next(iter(self.cache_data.keys()))
-                del self.cache_data[first_key]
-                print("DISCARD: {}".format(first_key))
+                    and len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+                        first_key = next(iter(self.cache_data.keys()))
+                        del self.cache_data[first_key]
+                        print("DISCARD: {}".format(first_key))
 
             self.cache_data[key] = item
 
